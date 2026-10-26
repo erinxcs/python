@@ -342,7 +342,13 @@ class Game:
             sys.exit()
         if evt.type != pygame.KEYDOWN:
             return
-        if evt.key == pygame.K_ESCAPE:
+        if evt.key == pygame.K_F11:
+            global screen
+            fullscreen = bool(screen.get_flags() & pygame.FULLSCREEN)
+            screen = pygame.display.set_mode(
+                (WIDTH, HEIGHT), 0 if fullscreen else pygame.FULLSCREEN
+            )
+        elif evt.key == pygame.K_ESCAPE:
             if self.state == "fight":
                 self.state = "paused"
             elif self.state == "paused":

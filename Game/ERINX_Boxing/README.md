@@ -22,4 +22,5 @@ python main.py
 | Block | L or S |
 | Dodge | Space or either Shift key |
 | Pause / resume | Escape or Enter |
+| Toggle fullscreen | F11 |
 | Start / rematch | Enter (R also rematches) |
