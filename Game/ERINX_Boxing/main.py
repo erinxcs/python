@@ -229,7 +229,8 @@ class Game:
         defender.stun = 0.04 if blocked else (0.20 if damage > 15 else 0.13)
         defender.invulnerable = 0.14
         defender.x = clamp(defender.x + attacker.face * (7 if blocked else 17), LEFT, RIGHT)
-        attacker.hits += 1
+        if not blocked:
+            attacker.hits += 1
         for _ in range(12 if blocked else 22):
             a = random.random() * math.tau
             speed = random.uniform(55, 220)
